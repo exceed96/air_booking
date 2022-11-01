@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="intro_sel">
+            <div class="header">
+                <!-- <div class="searchArea">
+                    <form>
+                        <input type="search" placeholder="Search">
+                        <span>검색</span>
+                    </form>
+                </div> -->
+                <ul class="nav">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">MY PAGE</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <body>
+        <div class="wrap">
+            <div class="intro_bg">
+                <div class="iner_background">
+                    <ul class="iner_top">
+                        <li><div class="iner_roundtrip"><a href="#">왕복</a></div></li>
+                        <li><div class="iner_oneway"><a href="#">편도</a></div></li>
+                    </ul>
+                    <ul class="iner_bottom">
+                        <li><div class="iner_start"><button class="start_button">출발지<img src="img/marker.png"></button></div></li>
+                        <li><div class="iner_dest"><button class="dest_button">도착지<img src="img/marker.png"></button></div></li>
+                        <li><div class="iner_pers"><button class="pers_button">인원<img src="img/person.png"></button></div></li>
+                        <li><div class="iner_callend"><button class="callend_button">달력<img src="img/calendar.png"></button></div></li>
+                        <li><div class="iner_search"><button class="search_button">조회</button></div></li>
+                    </ul>
+                </div>
+                <div class="start_modal">
+                    <div class="start_content">
+                        <div class="start_content_header">
+                            <div>출발지</div>
+                        </div>
+                        <input type="start" placeholder="출발지를 입력하세요.">
+                        <div class="start_content_bottom">
+                            <div class="start_content_bottom_left">
+                            </div>
+                            <div class="start_content_bottom_right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest_modal">
+                    <div class="dest_content">
+                        <div class="dest_content_header">
+                            <div>도착지</div>
+                        </div>
+                        <input type="dest" placeholder="도착지를 입력하세요.">
+                        <div class="dest_content_bottom">
+                            <div class="dest_content_bottom_left">
+                            </div>
+                            <div class="dest_content_bottom_right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pers_modal">
+                    <div class="pers_content">
+                        <div class="pers_content_header">
+                            <div>인원</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+
+        <script src="jquery-1.12.4.js"></script>
+        <script>
+            $('.start_button').click(function(){
+                $('.start_modal, .overlay').addClass('active')
+            })
+            $('.dest_button').click(function(){
+                $('.dest_modal, .overlay').addClass('active')
+            })
+            $('.pers_button').click(function(){
+                $('.pers_modal, .overlay').addClass('active')
+            })
+            $('.overlay').click(function(){
+                $('.start_modal, .overlay, .dest_modal, .pers_modal').removeClass('active')
+            })
+        </script>
+    </body>
+</html>

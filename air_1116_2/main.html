@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="intro_sel">
+            <div class="header">
+                <button class="home" type="button" onclick="location.href='main.html'"></button>
+                <ul class="nav">
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">MY PAGE</a></li>
+                    <li><a href="login.html">LOG IN</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <body>
+        <div class="wrap">
+            <div id="intro_bg">
+                <ul id="slide_image">
+                    <li><img src="img/back_img1.jpg"></li>
+                    <li><img src="img/back_img3.jpg"></li>
+                    <li><img src="img/back_img4.jpg"></li>
+                    <li><img src="img/back_img5.jpg"></li>
+                    <li><img src="img/back_img6.jpg"></li>
+                    <li><img src="img/back_img7.jpg"></li>
+                </ul>
+                <a id="prev" href="#">&#8810;</a>
+                <a id="next" href="#">&#8811;</a>
+                <div class="iner_background">
+                    <ul class="iner_top">
+                        <li><div class="iner_top_bottom"><button class="iner_roundtrip" id="iner_roundtrip"  v-on:click="roundway">왕복</button></div></li>
+                        <li><div class="iner_top_bottom"><button class="iner_oneway" id="iner_oneway" v-on:click="oneway">편도</button></div></li>
+                    </ul>
+                    <ul class="iner_bottom">
+                        <li><div class="iner_start"><button class="start_button">출발지</button></div></li>
+                        <li><div class="iner_dest"><button class="dest_button">도착지</button></div></li>
+                        <li><div class="iner_pers"><button class="pers_button">인원</button></div></li>
+                        <li><div class="iner_callend_round" v-show="number_1 <= 0"><input type="text" name="daterange" value="" /></div></li>
+                        <li><div class="iner_callend_one" v-show="number_1 > 0"><input type="text" name="datetimes" /></div></li>
+                        <li><div class="iner_search"><button class="search_button">조회</button></div></li>
+                    </ul>
+                </div>
+                <div class="start_modal">
+                    <div class="start_content">
+                        <div class="start_content_header">출발지</div>
+                        <input type="start" placeholder="출발지를 입력하세요.">
+                        <div class="start_content_bottom">
+                            <div class="start_content_bottom_left">
+                                <ul class="start_content_country">
+                                    <li><div class="South_korea"><button class="South_korea_button">1</button></div></li>
+                                    <li><div class="Japan"><button class="Japan_button">2</button></div></li>
+                                    <li><div class="China"><button class="China_button">3</button></div></li>
+                                </ul>
+                            </div>
+                            <div class="start_content_bottom_right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dest_modal">
+                    <div class="dest_content">
+                        <div class="dest_content_header">도착지</div>
+                        <input type="dest" placeholder="도착지를 입력하세요.">
+                        <div class="dest_content_bottom">
+                            <div class="dest_content_bottom_left">
+                            </div>
+                            <div class="dest_content_bottom_right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pers_modal">
+                    <div class="pers_content">
+                        <div class="pers_content_header">인원선택</div>
+                        <div class="pers_content_bottom">
+                            <ul class="pers_content_bottom_number">
+                                <li>
+                                    <div class="adult">성인</div>
+                                    <div class="adult_content">
+                                        <button class="adult_minus"onclick='count_adult("adult_minus")'>-</button>
+                                        <span id="adult_result">0</span>
+                                        <button class="adult_plus"onclick='count_adult("adult_plus")'>+</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="child">유아</div>
+                                    <div class="child_content">
+                                        <button class="child_minus"onclick='count_child("child_minus")'>-</button>
+                                        <span id="child_result">0</span>
+                                        <button class="child_plus"onclick='count_child("child_plus")'>+</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="infant">소아</div>
+                                    <div class="infant_content">
+                                        <button class="infant_minus"onclick='count_infant("infant_minus")'>-</button> 
+                                        <span id="infant_result">0</span>
+                                        <button class="infant_plus"onclick='count_infant("infant_plus")'>+</button>
+                                    </div>
+                                </li>
+                            </ul>   
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script src="main.js"></script>
+        <script src="image_slide.js"></script>
+    </body>
+</html>
